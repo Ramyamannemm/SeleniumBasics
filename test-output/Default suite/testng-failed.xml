@@ -5,7 +5,7 @@
     <classes>
       <class name="WebElementmethods">
         <methods>
-          <include name="mouseactions"/>
+          <include name="frames"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- WebElementmethods -->
