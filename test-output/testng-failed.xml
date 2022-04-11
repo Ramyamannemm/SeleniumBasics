@@ -5,8 +5,8 @@
     <classes>
       <class name="WebElementmethods">
         <methods>
-          <include name="frames"/>
           <include name="teardown"/>
+          <include name="implicitwait"/>
         </methods>
       </class> <!-- WebElementmethods -->
     </classes>

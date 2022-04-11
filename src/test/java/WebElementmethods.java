@@ -1,7 +1,10 @@
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.time.Duration;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -11,7 +14,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
@@ -179,7 +186,7 @@ public class WebElementmethods {
 		
 	}
 	
-	@Test
+	@Test(enabled=false)
 	public void Webtables()
 	{
 		System.setProperty("webdriver.chrome.driver", "./src/main/resources/drivers/chromedriver.exe");
@@ -217,6 +224,50 @@ public class WebElementmethods {
 		
 	}
 	
+	@Test(enabled=false)
+	public void WindowsHandles()
+	{
+		System.setProperty("webdriver.chrome.driver", "./src/main/resources/drivers/chromedriver.exe");
+		driver=new ChromeDriver();//Run time polymorphysim
+		driver.get("https://demoqa.com/browser-windows");
+		
+		driver.findElement(By.id("windowButton")).click();
+		
+		String ParentWindow =driver.getWindowHandle(); //the current window id
+		System.out.println(ParentWindow);
+		Set<String> Allwindows=driver.getWindowHandles(); //gives all the windwos that are opened
+		
+		for(String window: Allwindows)
+		{
+			System.out.println(window);
+			if(!window.equals(ParentWindow))
+			{
+				driver.switchTo().window(window);
+				String text=driver.findElement((By.id("sampleHeading"))).getText();
+				System.out.println(text);
+			}
+			
+			
+		}
+		
+		
+	}
+	
+	@Test
+	public void implicitwait()
+	{
+		System.setProperty("webdriver.chrome.driver", "./src/main/resources/drivers/chromedriver.exe");
+		driver=new ChromeDriver();//Run time polymorphysim
+		driver.get("https://demoqa.com/dynamic-properties");
+		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("visibleAfter")))).getText();
+		String text=driver.findElement(By.id("visibleAfter")).getText();
+		System.out.println(text);
+		
+		Wait wait1=new FluentWait(driver).withTimeout(Duration.ofSeconds(10)).pollingEvery(Duration.ofSeconds(2)).ignoring(getClass());;
+		
+	}
 	
 	
 	@AfterSuite
