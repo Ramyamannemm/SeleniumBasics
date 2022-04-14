@@ -141,6 +141,7 @@ public class WebElementmethods {
 		//driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 		//WebElement clickme=driver.findElement(By.xpath("//a[text()='Main Item 2']"));
 		Actions action=new Actions(driver);
+		action.sendKeys(Keys.ESCAPE);
 		//action.moveToElement(clickme).build().perform(); //mouse hover action
 		/*WebElement doubleclick=driver.findElement(By.id("doubleClickBtn"));
 		action.doubleClick(doubleclick).build().perform();
