@@ -32,7 +32,7 @@ public class HomePageTest extends TestBase {
 	@BeforeTest
 	public void LoginPrecondition()
 	{
-		loginpage.loginIntoCRMApplication(prop.getProperty("username"), prop.getProperty("password"));
+		loginpage.loginIntoYourLogoApplication(prop.getProperty("username"), prop.getProperty("password"));
 		
 	}
 	

@@ -12,14 +12,8 @@ public class CRMHomePage extends TestBase{
     
 	
 	//page factory -> it is an objects or element repository
-	@FindBy(xpath="//a[text()='Login']")
-	WebElement LoginLabel;
 	
-	@CacheLookup
-	@FindBy(xpath="//a[text()='Sign Up']")
-	WebElement SignupLabel;
-	
-	@FindBy(xpath="//span[@class='user-display']")
+	@FindBy(xpath="//a[@title='View my customer account']")
 	WebElement Homepageusername;
 	
 	
