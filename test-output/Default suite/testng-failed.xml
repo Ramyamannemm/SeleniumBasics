@@ -3,12 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="WebElementmethods">
+      <class name="crm.test.HomePageTest">
         <methods>
-          <include name="teardown"/>
-          <include name="implicitwait"/>
+          <include name="setUp"/>
+          <include name="HomePageTitleVerification"/>
+          <include name="TearDown"/>
+          <include name="LoggedInUserNameValidation"/>
+          <include name="LoginPrecondition"/>
         </methods>
-      </class> <!-- WebElementmethods -->
+      </class> <!-- crm.test.HomePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
