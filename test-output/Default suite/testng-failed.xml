@@ -6,8 +6,8 @@
       <class name="crm.test.HomePageTest">
         <methods>
           <include name="setUp"/>
-          <include name="HomePageTitleVerification"/>
           <include name="TearDown"/>
+          <include name="LoggedInUserNameValidation"/>
           <include name="LoginPrecondition"/>
         </methods>
       </class> <!-- crm.test.HomePageTest -->

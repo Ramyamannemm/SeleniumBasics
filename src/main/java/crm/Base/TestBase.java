@@ -7,7 +7,10 @@ import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import crm.Pages.CRMHomePage;
 import crm.Pages.CRMLoginPage;
@@ -52,8 +55,8 @@ public class TestBase {
 		
 		if(browser.equals("firefox"))
 		{
-			System.setProperty("webdriver.chrome.driver", "./src/main/resources/drivers/chromedriver.exe");
-			driver=new ChromeDriver();
+			System.setProperty("webdriver.gecko.driver", "./src/main/resources/drivers/geckodriver.exe");
+			driver=new FirefoxDriver();
 		}
 		
 		
@@ -72,6 +75,18 @@ public class TestBase {
 	{
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(duration));
 	}
+	
+	public static void actions(WebElement element)
+	{
+		Actions action=new Actions(driver);
+		action.moveToElement(element).build().perform();
+		
+		
+		
+	}
+	
+	
+	
 	
 	
 	

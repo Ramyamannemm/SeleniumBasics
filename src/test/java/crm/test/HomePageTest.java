@@ -32,6 +32,7 @@ public class HomePageTest extends TestBase {
 	@BeforeTest
 	public void LoginPrecondition()
 	{
+		//precondition for the test cases
 		loginpage.loginIntoYourLogoApplication(prop.getProperty("username"), prop.getProperty("password"));
 		
 	}
@@ -52,12 +53,18 @@ public class HomePageTest extends TestBase {
 	{
 		
 		String actualusername=homepage.HomePageusername();
-		Assert.assertEquals(actualusername, prop.getProperty("expectedloggedinuser"));
-		
-		
-		
+		Assert.assertEquals(actualusername,prop.getProperty("expectedloggedinuser")); //hard assert
+		System.out.println(actualusername);
 	}
 	
+	
+	@Test
+	public void TshirtsOstionUnderWomenMenuTest()
+	{
+		homepage.HoverOverWomenOptionAndClickOnTshirtsOption();
+		String Actualtshirtstitle=homepage.verifyTshirtpageIsOPened();
+		Assert.assertEquals(Actualtshirtstitle, "T-shirts");
+	}
 	
 	
 	

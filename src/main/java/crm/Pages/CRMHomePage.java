@@ -12,9 +12,18 @@ public class CRMHomePage extends TestBase{
     
 	
 	//page factory -> it is an objects or element repository
-	
+	@CacheLookup
 	@FindBy(xpath="//a[@title='View my customer account']")
 	WebElement Homepageusername;
+	
+	@FindBy(xpath="//a[@title='Women' and @class='sf-with-ul']")
+	WebElement WomenOptionInMenu;
+	
+	@FindBy(xpath="//a[@title='Women' and @class='sf-with-ul']//parent::li//a[@title='T-shirts']")
+	WebElement TshirtsOstionUnderWomenMenu;
+	
+	@FindBy(xpath="//span[@class='category-name']")
+	WebElement TishirtsPageclick;
 	
 	
 	public CRMHomePage()
@@ -37,6 +46,20 @@ public class CRMHomePage extends TestBase{
 		
 	}
 	
+	public void HoverOverWomenOptionAndClickOnTshirtsOption()
+	{
+		actions(WomenOptionInMenu);
+		TshirtsOstionUnderWomenMenu.click();
+		
+	}
+	
+	public String verifyTshirtpageIsOPened()
+	{
+		
+		String actualtshirtstitle=TishirtsPageclick.getText();
+		return actualtshirtstitle;
+		
+	}
 	
 	
 	
