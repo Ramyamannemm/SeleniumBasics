@@ -14,6 +14,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import crm.Pages.CRMHomePage;
 import crm.Pages.CRMLoginPage;
+import crm.Pages.MyProfilePage;
 
 public class TestBase {
 
@@ -22,6 +23,7 @@ public class TestBase {
 	public static WebDriver driver;
 	public static CRMHomePage homepage;
 	public static CRMLoginPage loginpage;
+	public static MyProfilePage profilepage;
 	
 	public TestBase()
 	{

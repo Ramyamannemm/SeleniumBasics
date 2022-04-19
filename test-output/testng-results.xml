@@ -1,81 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-04-16T10:09:32 IST" name="Default suite" finished-at="2022-04-16T10:09:38 IST" duration-ms="6245">
+  <suite started-at="2022-04-19T09:41:25 IST" name="Default suite" finished-at="2022-04-19T09:41:38 IST" duration-ms="13188">
     <groups>
     </groups>
-    <test started-at="2022-04-16T10:09:32 IST" name="Default test" finished-at="2022-04-16T10:09:38 IST" duration-ms="6245">
-      <class name="crm.test.HomePageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:crm.test.HomePageTest@2f9f7dcf]" started-at="2022-04-16T10:09:26 IST" name="setUp" finished-at="2022-04-16T10:09:32 IST" duration-ms="6175" status="PASS">
+    <test started-at="2022-04-19T09:41:25 IST" name="Default test" finished-at="2022-04-19T09:41:38 IST" duration-ms="13188">
+      <class name="crm.test.MyProfileTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:crm.test.MyProfileTest@689604d9]" started-at="2022-04-19T09:41:11 IST" name="setUp" finished-at="2022-04-19T09:41:25 IST" duration-ms="13714" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="LoginPrecondition()[pri:0, instance:crm.test.HomePageTest@2f9f7dcf]" started-at="2022-04-16T10:09:32 IST" name="LoginPrecondition" finished-at="2022-04-16T10:09:36 IST" duration-ms="3772" status="PASS">
+        <test-method is-config="true" signature="LoginPrecondition()[pri:0, instance:crm.test.MyProfileTest@689604d9]" started-at="2022-04-19T09:41:25 IST" name="LoginPrecondition" finished-at="2022-04-19T09:41:30 IST" duration-ms="4814" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginPrecondition -->
-        <test-method signature="HomePageTitleVerification()[pri:0, instance:crm.test.HomePageTest@2f9f7dcf]" started-at="2022-04-16T10:09:36 IST" name="HomePageTitleVerification" finished-at="2022-04-16T10:09:36 IST" duration-ms="10" status="PASS">
+        <test-method signature="addressFillValidation(java.lang.String,java.lang.String)[pri:0, instance:crm.test.MyProfileTest@689604d9]" started-at="2022-04-19T09:41:30 IST" name="addressFillValidation" data-provider="getCRMTestData" finished-at="2022-04-19T09:41:35 IST" duration-ms="5270" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Ramya]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Mannem]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- HomePageTitleVerification -->
-        <test-method signature="LoggedInUserNameValidation()[pri:0, instance:crm.test.HomePageTest@2f9f7dcf]" started-at="2022-04-16T10:09:36 IST" name="LoggedInUserNameValidation" finished-at="2022-04-16T10:09:36 IST" duration-ms="25" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [RamyaMannem] but found [Ramya Mannem]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [RamyaMannem] but found [Ramya Mannem]
-at org.testng.Assert.fail(Assert.java:110)
-at org.testng.Assert.failNotEquals(Assert.java:1413)
-at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-at org.testng.Assert.assertEquals(Assert.java:131)
-at org.testng.Assert.assertEquals(Assert.java:655)
-at org.testng.Assert.assertEquals(Assert.java:665)
-at crm.test.HomePageTest.LoggedInUserNameValidation(HomePageTest.java:56)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:808)
-at org.testng.TestRunner.run(TestRunner.java:603)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
-at org.testng.SuiteRunner.run(SuiteRunner.java:326)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-at org.testng.TestNG.runSuites(TestNG.java:1092)
-at org.testng.TestNG.run(TestNG.java:1060)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        </test-method> <!-- addressFillValidation -->
+        <test-method signature="addressFillValidation(java.lang.String,java.lang.String)[pri:0, instance:crm.test.MyProfileTest@689604d9]" started-at="2022-04-19T09:41:35 IST" name="addressFillValidation" data-provider="getCRMTestData" finished-at="2022-04-19T09:41:38 IST" duration-ms="2716" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Anusha]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Anu]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoggedInUserNameValidation -->
-        <test-method signature="TshirtsOstionUnderWomenMenuTest()[pri:0, instance:crm.test.HomePageTest@2f9f7dcf]" started-at="2022-04-16T10:09:36 IST" name="TshirtsOstionUnderWomenMenuTest" finished-at="2022-04-16T10:09:38 IST" duration-ms="2352" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TshirtsOstionUnderWomenMenuTest -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:crm.test.HomePageTest@2f9f7dcf]" started-at="2022-04-16T10:09:38 IST" name="TearDown" finished-at="2022-04-16T10:09:38 IST" duration-ms="62" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TearDown -->
-      </class> <!-- crm.test.HomePageTest -->
+        </test-method> <!-- addressFillValidation -->
+      </class> <!-- crm.test.MyProfileTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
