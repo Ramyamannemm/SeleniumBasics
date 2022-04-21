@@ -1,5 +1,6 @@
 package crm.test;
 
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -13,11 +14,14 @@ import crm.utilities.ExcelSheetRead;
 
 public class MyProfileTest extends TestBase {
 	
+	
 	public MyProfileTest()
 	{
 		super(); //this instantiates the parent class constructor first
 		
 	}
+	
+	
 	
 	/* This method does browser launching and also application launching*/
 	@BeforeSuite
@@ -37,6 +41,8 @@ public class MyProfileTest extends TestBase {
 		loginpage.loginIntoYourLogoApplication(prop.getProperty("username"), prop.getProperty("password"));
 		
 	}
+	
+	
 	
 	@DataProvider
 	public Object[][] getCRMTestData(){

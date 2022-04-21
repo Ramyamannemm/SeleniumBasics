@@ -1,15 +1,21 @@
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -254,7 +260,7 @@ public class WebElementmethods {
 		
 	}
 	
-	@Test
+	@Test(enabled=false)
 	public void implicitwait()
 	{
 		System.setProperty("webdriver.chrome.driver", "./src/main/resources/drivers/chromedriver.exe");
@@ -269,6 +275,56 @@ public class WebElementmethods {
 		Wait wait1=new FluentWait(driver).withTimeout(Duration.ofSeconds(10)).pollingEvery(Duration.ofSeconds(2)).ignoring(getClass());;
 		
 	}
+	
+	@Test(enabled=false)
+	public void scrolling()
+	{
+		System.setProperty("webdriver.chrome.driver", "./src/main/resources/drivers/chromedriver.exe");
+		driver=new ChromeDriver();//Run time polymorphysim
+		driver.get("https://demoqa.com/");
+		driver.manage().window().maximize();
+		WebElement ele=driver.findElement(By.xpath("//h5[text()='Elements']"));
+		JavascriptExecutor js=((JavascriptExecutor)(driver));
+		//js.executeScript("window.scrollBy(0,1000)");
+		js.executeScript("arguments[0].scrollIntoView();", ele);
+		ele.click();
+		
+		
+	}
+	
+	@Test
+	public void takescreenshot() 
+	{
+		
+		System.setProperty("webdriver.chrome.driver", "./src/main/resources/drivers/chromedriver.exe");
+		driver=new ChromeDriver();//Run time polymorphysim
+		driver.get("https://demoqa.com/");
+		driver.manage().window().maximize();
+		WebElement ele=driver.findElement(By.xpath("//h5[text()='Elements']"));
+		try
+		{
+		ele.click();
+		}
+		catch(ElementClickInterceptedException e)
+		{
+		TakesScreenshot screenshot=((TakesScreenshot)(driver));
+		
+		File src=screenshot.getScreenshotAs(OutputType.FILE);
+		File dest=new File("./test-output/screenshot.png");
+		
+			try {
+				FileUtils.copyFile(src, dest);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		
+			// TODO Auto-generated catch block
+			
+		}
+	}
+	
+	
 	
 	
 	@AfterSuite
