@@ -52,6 +52,8 @@ public class TestBase {
 	
 	public static void initialization()
 	{
+		
+		//browser instatiation
 		String browser=prop.getProperty("browser");
 		
 		
