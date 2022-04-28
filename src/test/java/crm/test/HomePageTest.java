@@ -8,6 +8,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -44,8 +45,17 @@ public class HomePageTest extends TestBase {
 	@BeforeTest
 	public void LoginPrecondition()
 	{
+		try
+		{
 		//precondition for the test cases
 		loginpage.loginIntoYourLogoApplication(prop.getProperty("username"), prop.getProperty("password"));
+		}
+		catch (NullPointerException e) {
+			// TODO: handle exception
+			loginpage=new CRMLoginPage();
+			loginpage.loginIntoYourLogoApplication(prop.getProperty("username"), prop.getProperty("password"));
+			
+		}
 		
 	}
 	
@@ -54,9 +64,11 @@ public class HomePageTest extends TestBase {
 	{
 		Extentreports.extentReports();
 	        
-	}	
+	}
+	
+	@Parameters("browser")
 	@Test
-	public void HomePageTitleVerification()
+	public void HomePageTitleVerification(String BrowserType)
 	{
 		Extentreports.extentReportsTest("HomePageTitleVerification");
 		String actualtitle=homepage.HomePageTitle();

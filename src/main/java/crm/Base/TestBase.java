@@ -27,17 +27,23 @@ public class TestBase {
 	
 	public TestBase()
 	{
-		try {
-			prop = new Properties();
-			FileInputStream ip = new FileInputStream("./src/main/resources/Properties/Config.properties");
-			prop.load(ip);
+		
+			
+			try {
+				//properties file instatitaion
+				prop = new Properties();
+				FileInputStream ip;
+				ip = new FileInputStream("./src/main/resources/Properties/Config.properties");
+					prop.load(ip);
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}	
+			}
+			
+			
 		
 		
 		
